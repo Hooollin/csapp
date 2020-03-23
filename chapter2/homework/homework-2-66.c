@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int odd_ones(unsigned x){
+int leftmost_one(unsigned x){
 	x = x ^ (x >> 16);
 	x = x ^ (x >> 8);
 	x = x ^ (x >> 4);
@@ -10,6 +10,7 @@ int odd_ones(unsigned x){
 }
 
 int main(){
-    int x = 0x00000000;
-    printf("%d", odd_ones(x));
+    int x = 0x1111111;
+    printf("%d", leftmost_one(x));
 }
+
