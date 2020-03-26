@@ -1,0 +1,27 @@
+int comp(data_t a, data_b){
+    return a COMP b;
+}
+
+A.cmpl %esi, %edi
+  setl %al
+
+data_t -> int
+COMP   -> <
+
+B.cmpw %si, %di
+ setge %al
+
+data_t -> short
+COMP   -> >=
+
+C.cmpb %sil, dil
+ setbe %al
+
+data_t -> unsigned char
+COMP   -> <=(U)
+
+d.cmpq %rsi, %rdi
+ setne %a
+
+data_t -> long long
+COMP   -> !=
