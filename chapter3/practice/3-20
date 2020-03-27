@@ -1,0 +1,13 @@
+#define OP(x) /
+
+long arith(long ax){
+    return ax OP 8;
+}
+
+
+arith:
+leaq    7(%rdi), %rax   ;t = 7 + ax;
+testq   %rdi,    %rdi   ;
+cmovns  %rdi,    %rax   ;ax >= 0, ax -> rax
+sarq    $3,      %rax   ;ax >> 3
+ret
