@@ -1,0 +1,29 @@
+long fun_b(unsigned long x){
+    long val = 0;
+    long i;
+    for(i = 64; i != 0; i--){
+        int t = x & 1; 
+        val += val;
+        val |= t;
+
+        /* val = (val >> 1) | (x & 1); */
+
+        x >>= 1;
+    }
+    return val;
+}
+
+
+
+fun_b:
+movl     $64,  %edx
+movl     $0,   %eax
+.L10:
+movq     %rdi, %rcx
+andl     $1,   %ecx
+andq     %rax, %rax
+orq      %rcx, %rax
+shrq     %rdi
+subq     $1,   %rdx
+jne      .L10
+rept;    ret
