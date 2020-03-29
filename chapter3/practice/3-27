@@ -1,0 +1,38 @@
+long fact_for(long n){
+    long i;
+    long result = 1;
+    for(int i = 0; i <= n; i++){
+        result *= i;
+    }
+    return result;
+}
+
+
+long fact_while(long n){
+    long i = 0;
+    long result = 1;
+    while(i <= n){
+        result *= i;
+        i += 1;
+    }
+    return result;
+}
+
+
+long fact_while_guarded(long n){
+    long i = 0;
+    long result = 1;
+    int t = i <= n;
+    if(!t){
+        goto done;
+    }
+loop:
+    result *= i;
+    i += 1;
+    t = i <= n;
+    if(t){
+        goto loop;
+    }
+done:
+    return result;
+}
