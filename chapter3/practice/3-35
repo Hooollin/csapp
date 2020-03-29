@@ -1,0 +1,11 @@
+long rfun(unsinged long x){
+    if(x == 0) return 0;
+    unsigned long nx = x >> 2;
+    long rv = rfun(nx);
+    return rv + x;
+}
+
+A.
+是%rdi中的值，也就是x。
+B.
+如上。
