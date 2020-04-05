@@ -1,0 +1,9 @@
+void swap(long *xp, long *yp){
+    *xp = *xp + *yp;
+    *yp = *xp - *yp;
+    *xy = *xp - *yp;
+}
+
+
+假设xp和yp指向同一个地址，那么*py = *xp - *yp则会得0，起不到交换的效果。
+
