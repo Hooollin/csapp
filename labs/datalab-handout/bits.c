@@ -144,7 +144,7 @@ NOTES:
  */
 int bitXor(int x, int y) {
   // Xor->相同为0，不同为1
-  return ~(x & y);
+    return ~(~(~x & y) & ~(x & ~y));
 }
 /* 
  * tmin - return minimum two's complement integer 
